@@ -17,9 +17,11 @@ urlpatterns = patterns('',
     url(r'^contact$', 'app.views.contact', name='contact'),
     url(r'^about', 'app.views.about', name='about'),
     url(r'^cadastro_cursos', 'app.views.cadastro_cursos', name='cadastro_cursos'),
-    url(r'^login/$',
-        'django.contrib.auth.views.login',
     url(r'^cadastro_vestibulares', 'app.views.cadastro_vestibulares', name='cadastro_vestibulares'),
+                   
+    url(r'^login/$',
+        
+        'django.contrib.auth.views.login',
         {
             'template_name': 'app/login.html',
             'authentication_form': BootstrapAuthenticationForm,
@@ -29,7 +31,7 @@ urlpatterns = patterns('',
                 'year':datetime.now().year,
             }
         },
-       name='login'),
+        name='login'),
     url(r'^logout$',
         'django.contrib.auth.views.logout',
         {
