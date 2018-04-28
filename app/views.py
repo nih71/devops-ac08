@@ -2,11 +2,15 @@
 Definition of views.
 """
 
-#editado
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from app.models import Curso, Vestibular, Candidato
+ sprint03
+
+
+
+ master
 from datetime import datetime
 
 def home(request):
@@ -64,6 +68,7 @@ def cadastro_cursos(request):
         })
     )
 
+
 def cadastro_vestibulares(request):
     assert isinstance(request, HttpRequest)
     return render(
@@ -75,6 +80,23 @@ def cadastro_vestibulares(request):
             'vestibulares': Vestibular.objects.all(),
             'year':datetime.now().year,
         })
+    )
+
+def inscricao_candidatos(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/inscricao_candidatos.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'inscricao de candidatoss',
+            'candidatos': Candidato.objects.all(),
+            'year':datetime.now().year,
+        })
+    )
+
+
+ sprint03
 
 )
 def inscricao_candidatos(request):
@@ -90,3 +112,4 @@ def inscricao_candidatos(request):
         })
 )
 
+ master
