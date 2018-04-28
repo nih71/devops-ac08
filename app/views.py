@@ -88,5 +88,5 @@ def inscricao_candidatos(request):
             'candidatos': Candidato.objects.all(),
             'year':datetime.now().year,
         })
-    )
+)
 
