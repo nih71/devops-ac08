@@ -6,11 +6,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from app.models import Curso, Vestibular, Candidato
- sprint03
 
 
-
- master
 from datetime import datetime
 
 def home(request):
@@ -95,21 +92,3 @@ def inscricao_candidatos(request):
         })
     )
 
-
- sprint03
-
-)
-def inscricao_candidatos(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/inscricao_candidatos.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'inscricao de candidatoss',
-            'candidatos': Candidato.objects.all(),
-            'year':datetime.now().year,
-        })
-)
-
- master
